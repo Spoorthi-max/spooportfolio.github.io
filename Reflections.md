@@ -1,10 +1,10 @@
-/*
-** Algorithm Overview **
 
-1. Kinds of Problems in Nature
-*/
+# Algorithm Overview 
 
-// Iteration Example: Factorial Calculation
+# 1. Kinds of Problems in Nature
+
+
+# Iteration Example: Factorial Calculation
                                                                                                                                                                
      long long factorial (int n)
     {  
@@ -17,7 +17,7 @@
     return result;
     }
 
-// Recursion Example: Fibonacci Series
+# Recursion Example: Fibonacci Series
 
     int fibonacci(int n)
     {
@@ -54,7 +54,7 @@
     return 0;
     }
 
-#Backtracking Example: N-Queens Problem
+# Backtracking Example: N-Queens Problem
 
     #include <iostream>
     using namespace std;
@@ -116,7 +116,7 @@
     solveNQueens(N);
     return 0;
     }
-#2. Space and Time Efficiency
+# 2. Space and Time Efficiency
 
 ## Space Efficiency
 - *Definition*: The amount of memory an algorithm uses during execution.
