@@ -1,5 +1,6 @@
 
 - [Course_Reflections](./Reflections.md)
+ - [Bussiness Cases](./Bussiness_cases.md)
 ## Portfolio
 
 ### Hello, I'm Spoorthi Hiremath 👋
