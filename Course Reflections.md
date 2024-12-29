@@ -162,10 +162,10 @@ ALGORITHM Merge(B[0...p-1], C[0...q-1], A[0...p+q-1])
     if i = p
         copy C[j...q-1] to A[k...p+q-1]
     else
-        copy B[i...p-1] to A[k...p+q-1]
+        copy B[i...p-1] to A[k...p+q-1].
 
 
-### Divide and Conquer
+##### Divide and Conquer
 - Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).
 
 ## Greedy Algorithms
