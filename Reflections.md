@@ -116,7 +116,7 @@ int main() {
 
 # Orders of Growth
 
-{% markdown %}
++ {% markdown %}
 | Order      | Description                        | Example                           |
 |------------|------------------------------------|-----------------------------------|
 | O(1)       | Constant time                     | Accessing an element in an array |
@@ -125,7 +125,7 @@ int main() {
 | O(n log n) | Log-linear time                   | Sorting algorithms like MergeSort |
 | O(n²)      | Quadratic time                    | Bubble Sort                      |
 | O(2ⁿ)      | Exponential time                  | Solving the Tower of Hanoi       |
-{% endmarkdown %}
++ {% endmarkdown %}
 ## 3. Takeaways from Design Principles
 
 ### Divide and Conquer
