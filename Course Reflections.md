@@ -163,8 +163,9 @@ ALGORITHM Merge(B[0...p-1], C[0...q-1], A[0...p+q-1])
         copy C[j...q-1] to A[k...p+q-1]
     else
         copy B[i...p-1] to A[k...p+q-1]
-## Dynamic Programming
-- Store solutions to sub-problems to avoid redundant computation (e.g., Knapsack problem).
+
+### Divide and Conquer
+- Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).
 
 ## Greedy Algorithms
 - Make locally optimal choices aiming for global optimum (e.g., Prim’s and Kruskal’s algorithms).
@@ -230,3 +231,97 @@ void KruskalMST(Edge edges[], int E, int V) {
 }
 ## Brute Force
 - Exhaustively explore all possibilities (e.g., string matching).
+## 4. Hierarchical Data and Tree Structures
+
+- **Tree**: A hierarchical structure with a root node and child nodes.
+- **Binary Search Tree (BST)**: Maintains sorted order for efficient searches.
+- **AVL Tree**: Self-balancing BST that prevents skewness.
+- **Red-Black Tree**: A balanced BST ensuring logarithmic time operations.
+- **Heap**: A complete binary tree used in priority queues.
+- **Trie**: Specialized for prefix-based search.
+## 5. Array Query Algorithms
+
+- **Segment Tree**: Handles range queries efficiently.
+- **Fenwick Tree**: Optimized for cumulative frequency queries.
+- **Sparse Table**: Precomputes answers for range queries.
+## 6. Trees vs Graphs
+
+### Trees
+- A connected, acyclic graph with a single path between nodes.
+
+#### Applications
+- XML parsing
+- Game trees
+
+### Graphs
+- Generalized structure with nodes (vertices) and edges (connections).
+
+#### Applications
+- Networking
+- Shortest path calculations
+## 7. Sorting and Searching Algorithms
+
+### Sorting Techniques
+- **Bubble Sort (O(n²))**
+- **MergeSort (O(n log n))**
+- **QuickSort (average O(n log n))**
+
+#### Bubble Sort
+```pseudo
+ALGORITHM BubbleSort(A[0..n-1])
+    // Sorts a given array using bubble sort
+    // Input: An array A[0..n-1] of orderable elements
+    // Output: Array A[0...n-1] sorted in ascending order
+
+    for i <- 0 to n - 2 do
+        for j <- 0 to n - 2 - i do
+            if A[j+1] < A[j]
+                swap A[j] and A[j+1]
+
+### Searching Techniques
+- **Linear Search (O(n))**
+- **Binary Search (O(log n))**
+#### Linear Search
+```cpp
+int linearSearch(const vector& arr, int key) {
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] == key) return i;
+    }
+    return -1;
+}
+#### Binary Search
+```cpp
+int binarySearch(const vector& arr, int key) {
+    int left = 0, right = arr.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == key) return mid;
+        if (arr[mid] < key) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+## 8. Graph Algorithms
+
+### Spanning Trees
+- Minimal cost connectivity (e.g., Prim’s, Kruskal’s).
+
+### Shortest Paths
+- Algorithms like Dijkstra, Bellman-Ford, Floyd-Warshall.
+## 9. Algorithm Design Techniques
+
+### Divide and Conquer
+- Splits problems recursively.
+
+### Dynamic Programming
+- Stores intermediate results to avoid recomputation.
+
+### Greedy Algorithms
+- Chooses the best current option.
+
+### Backtracking
+- Explores solutions and backtracks when constraints fail.
+
+### Branch and Bound
+- Optimized searching for combinatorial problems.
+
