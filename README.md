@@ -1,4 +1,4 @@
-# spooportfolio.github.io
+
 ## Portfolio
 
 ### Hello, I'm Spoorthi Hiremath 👋
