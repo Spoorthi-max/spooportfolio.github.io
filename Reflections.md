@@ -5,8 +5,13 @@
 */
 
 // Iteration Example: Factorial Calculation
-long long factorial(int n) {
+
+
+long long factorial (int n)
+{  
+
     long long result = 1;
+    
     for (int i = 1; i <= n; ++i) {
         result *= i;
     }
@@ -14,7 +19,10 @@ long long factorial(int n) {
 }
 
 // Recursion Example: Fibonacci Series
-int fibonacci(int n) {
+
+int fibonacci(int n)
+{
+
     if (n <= 1) {
         return n;
     }
@@ -23,8 +31,11 @@ int fibonacci(int n) {
 
 // Recursion Example: Tower of Hanoi
 #include <stdio.h>
-void towers(int n, char from, char to, char aux) {
-    if (n == 1) {
+void towers(int n, char from, char to, char aux)
+{
+    if (n == 1)
+    {
+    
         printf("Move disk 1 from %c to %c\n", from, to);
         return;
     }
@@ -33,7 +44,9 @@ void towers(int n, char from, char to, char aux) {
     towers(n - 1, aux, to, from);
 }
 
-int main() {
+int main() 
+{
+
     int n;
     printf("Enter the number of Disks to be moved\n");
     scanf("%d", &n);
@@ -42,11 +55,16 @@ int main() {
 }
 
 // Backtracking Example: N-Queens Problem
+
 #include <iostream>
 using namespace std;
 
-bool isSafe(int board[][10], int row, int col, int N) {
-    for (int i = 0; i < row; i++) {
+bool isSafe(int board[][10], int row, int col, int N)
+{
+
+    for (int i = 0; i < row; i++)
+    {
+    
         if (board[i][col] == 1 || 
             (col - (row - i) >= 0 && board[i][col - (row - i)] == 1) || 
             (col + (row - i) < N && board[i][col + (row - i)] == 1)) {
@@ -57,7 +75,9 @@ bool isSafe(int board[][10], int row, int col, int N) {
 }
 
 bool solveNQueens(int board[][10], int row, int N) {
+
     if (row == N) {
+    
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 cout << (board[i][j] ? "Q " : ". ");
@@ -79,7 +99,9 @@ bool solveNQueens(int board[][10], int row, int N) {
     return res;
 }
 
-void solveNQueens(int N) {
+void solveNQueens(int N)
+{
+
     int board[10][10] = {0};
     if (!solveNQueens(board, 0, N)) {
         cout << "Solution does not exist!" << endl;
@@ -87,6 +109,7 @@ void solveNQueens(int N) {
 }
 
 int main() {
+
     int N;
     cout << "Enter the value of N: ";
     cin >> N;
