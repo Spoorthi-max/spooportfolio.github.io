@@ -93,95 +93,140 @@ int main() {
     solveNQueens(N);
     return 0;
 }
+#2. Space and Time Efficiency
 
-/*
-** 2. Space and Time Efficiency **
+## Space Efficiency
+- *Definition*: The amount of memory an algorithm uses during execution.
+- *Importance*: Reduces memory consumption, crucial in memory-constrained systems.
+- *Example*: Recursive algorithms (like computing Fibonacci numbers) may need more memory because each recursive call adds a new layer to the call stack.
 
-- Space Efficiency: Recursive Fibonacci is memory-intensive due to stack calls.
-- Time Efficiency: Use asymptotic analysis to optimize algorithm performance.
+## Time Efficiency
+- *Definition*: The time an algorithm takes to run, measured in terms of input size (asymptotic analysis).
+- *Importance*: Reduces execution time, critical in time-sensitive systems like real-time applications.
 
-Classes of Problems:
-- P: Solvable in polynomial time (e.g., sorting).
-- NP: Solutions verifiable in polynomial time.
-- NP-Hard/NP-Complete: No known polynomial-time solutions.
-*/
+---
 
-// Example: Merge Sort Algorithm
-void merge(int arr[], int l, int m, int r) {
-    int n1 = m - l + 1;
-    int n2 = r - m;
+# Classes of Problems
 
-    int L[n1], R[n2];
+- *P*: Problems solvable in polynomial time (e.g., sorting).
+- *NP*: Problems for which solutions can be verified in polynomial time (e.g., traveling salesman).
+- *NP-Hard/NP-Complete*: Problems that are at least as hard as NP problems, with no known polynomial-time solutions.
 
-    for (int i = 0; i < n1; i++)
-        L[i] = arr[l + i];
-    for (int j = 0; j < n2; j++)
-        R[j] = arr[m + 1 + j];
+---
 
-    int i = 0, j = 0, k = l;
-    while (i < n1 && j < n2) {
-        arr[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];
+# Orders of Growth
+
+| Order      | Description                        | Example                           |
+|------------|------------------------------------|-----------------------------------|
+| O(1)       | Constant time                     | Accessing an element in an array |
+| O(log n)   | Logarithmic time                  | Binary search                    |
+| O(n)       | Linear time                       | Linear search                    |
+| O(n log n) | Log-linear time                   | Sorting algorithms like MergeSort |
+| O(n²)      | Quadratic time                    | Bubble Sort                      |
+| O(2ⁿ)      | Exponential time                  | Solving the Tower of Hanoi       |
+## 3. Takeaways from Design Principles
+
+### Divide and Conquer
+- Break a problem into smaller sub-problems, solve them, and combine results (e.g., MergeSort, QuickSort).
+
+#### Merge Sort
+```pseudo
+ALGORITHM MergeSort(A[0..n-1])
+    // Sorts a given array A[0..n-1] by recursive mergesort
+    // Input: An array A[0..n-1] of orderable elements
+    // Output: Array A[0...n-1] sorted in nondecreasing order
+
+    if n > 1
+        copy A[0...|_n/2_| - 1] to B[0...|_n/2_| - 1]
+        copy A[|_n/2_| ... n - 1] to C[0...| ̄ n/2  ̄| - 1]
+        MergeSort(B[0...|_n/2_| - 1])
+        MergeSort(C[0...| ̄ n/2  ̄| - 1])
+        Merge(B, C, A)
+
+ALGORITHM Merge(B[0...p-1], C[0...q-1], A[0...p+q-1])
+    // Merges two sorted arrays into one sorted array
+    // Input: Arrays B[0...p-1] and C[0...q-1] both sorted
+    // Output: Sorted array A[0...p+q-1] of the elements of B and C
+
+    i <- 0
+    j <- 0
+    k <- 0
+    while i < p and j < q do
+        if B[i] <= C[j]
+            A[k] <- B[i]
+            i <- i + 1
+        else
+            A[k] <- C[j]
+            j <- j + 1
+        k <- k + 1
+    if i = p
+        copy C[j...q-1] to A[k...p+q-1]
+    else
+        copy B[i...p-1] to A[k...p+q-1]
+## Dynamic Programming
+- Store solutions to sub-problems to avoid redundant computation (e.g., Knapsack problem).
+
+## Greedy Algorithms
+- Make locally optimal choices aiming for global optimum (e.g., Prim’s and Kruskal’s algorithms).
+
+### Kruskal’s Algorithm
+```cpp
+int Find(int parent[], int i) {
+    if (parent[i] != i)
+        parent[i] = Find(parent, parent[i]);
+    return parent[i];
+}
+
+void Union(int parent[], int rank[], int x, int y) {
+    int xroot = Find(parent, x);
+    int yroot = Find(parent, y);
+
+    if (rank[xroot] < rank[yroot])
+        parent[xroot] = yroot;
+    else if (rank[xroot] > rank[yroot])
+        parent[yroot] = xroot;
+    else {
+        parent[yroot] = xroot;
+        rank[xroot]++;
+    }
+}
+
+void KruskalMST(Edge edges[], int E, int V) {
+    int weights[E], idx[E];
+    for (int i = 0; i < E; i++) {
+        weights[i] = edges[i].weight;
+        idx[i] = i;
     }
 
-    while (i < n1)
-        arr[k++] = L[i++];
-    while (j < n2)
-        arr[k++] = R[j++];
-}
+    MergeSort(weights, idx, 0, E - 1);
 
-void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = l + (r - l) / 2;
-
-        mergeSort(arr, l, m);
-        mergeSort(arr, m + 1, r);
-        merge(arr, l, m, r);
-    }
-}
-
-/*
-** 3. Graph Algorithms **
-*/
-
-// Dijkstra's Algorithm
-#include <iostream>
-#include <vector>
-#include <climits>
-using namespace std;
-
-void dijkstra(vector<vector<int>>& graph, int src) {
-    int V = graph.size();
-    vector<int> dist(V, INT_MAX);
-    vector<bool> sptSet(V, false);
-
-    dist[src] = 0;
-    for (int count = 0; count < V - 1; count++) {
-        int u = -1;
-
-        for (int i = 0; i < V; i++)
-            if (!sptSet[i] && (u == -1 || dist[i] < dist[u]))
-                u = i;
-
-        sptSet[u] = true;
-
-        for (int v = 0; v < V; v++)
-            if (!sptSet[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v])
-                dist[v] = dist[u] + graph[u][v];
+    int parent[V], rank[V];
+    for (int i = 0; i < V; i++) {
+        parent[i] = i;
+        rank[i] = 0;
     }
 
-    for (int i = 0; i < V; i++)
-        cout << "Vertex " << i << " -> Distance from source: " << dist[i] << endl;
-}
+    Edge mst[V - 1];
+    int mstSize = 0;
 
-int main() {
-    vector<vector<int>> graph = {
-        {0, 10, 0, 0, 0},
-        {0, 0, 20, 5, 0},
-        {0, 0, 0, 0, 1},
-        {0, 0, 0, 0, 2},
-        {0, 0, 0, 0, 0}
-    };
+    for (int i = 0; i < E && mstSize < V - 1; i++) {
+        Edge edge = edges[idx[i]];
+        int x = Find(parent, edge.src);
+        int y = Find(parent, edge.dest);
 
-    dijkstra(graph, 0);
-    return 0;
+        if (x != y) {
+            mst[mstSize++] = edge;
+            Union(parent, rank, x, y);
+        }
+    }
+
+    cout << "Edges in the Minimum Spanning Tree:\n";
+    int cost = 0;
+    for (int i = 0; i < mstSize; i++) {
+        cout << mst[i].src << " -- " << mst[i].dest << " == " << mst[i].weight << endl;
+        cost += mst[i].weight;
+    }
+    cout << "Cost = " << cost << endl;
 }
+## Brute Force
+- Exhaustively explore all possibilities (e.g., string matching).
