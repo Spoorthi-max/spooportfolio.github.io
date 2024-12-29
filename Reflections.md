@@ -5,10 +5,9 @@
 */
 
 // Iteration Example: Factorial Calculation
-
-
-long long factorial (int n)
-{  
+                                                                                                                                                               
+     long long factorial (int n)
+    {  
 
     long long result = 1;
     
@@ -16,23 +15,24 @@ long long factorial (int n)
         result *= i;
     }
     return result;
-}
+    }
 
 // Recursion Example: Fibonacci Series
 
-int fibonacci(int n)
-{
+    int fibonacci(int n)
+    {
 
     if (n <= 1) {
         return n;
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
-}
+    }
 
-// Recursion Example: Tower of Hanoi
-#include <stdio.h>
-void towers(int n, char from, char to, char aux)
-{
+# Recursion Example: Tower of Hanoi
+
+       #include <stdio.h>
+    void towers(int n, char from, char to, char aux)
+    {
     if (n == 1)
     {
     
@@ -42,25 +42,25 @@ void towers(int n, char from, char to, char aux)
     towers(n - 1, from, aux, to);
     printf("Move disk %d from %c to %c\n", n, from, to);
     towers(n - 1, aux, to, from);
-}
+    }
 
-int main() 
-{
+    int main() 
+    {
 
     int n;
     printf("Enter the number of Disks to be moved\n");
     scanf("%d", &n);
     towers(n, 'A', 'C', 'B');
     return 0;
-}
+    }
 
-// Backtracking Example: N-Queens Problem
+#Backtracking Example: N-Queens Problem
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-bool isSafe(int board[][10], int row, int col, int N)
-{
+    bool isSafe(int board[][10], int row, int col, int N)
+    {
 
     for (int i = 0; i < row; i++)
     {
@@ -72,9 +72,9 @@ bool isSafe(int board[][10], int row, int col, int N)
         }
     }
     return true;
-}
+    }
 
-bool solveNQueens(int board[][10], int row, int N) {
+    bool solveNQueens(int board[][10], int row, int N) {
 
     if (row == N) {
     
@@ -97,25 +97,25 @@ bool solveNQueens(int board[][10], int row, int N) {
         }
     }
     return res;
-}
+    }
 
-void solveNQueens(int N)
-{
+    void solveNQueens(int N)
+    {
 
     int board[10][10] = {0};
     if (!solveNQueens(board, 0, N)) {
         cout << "Solution does not exist!" << endl;
     }
-}
+    }
 
-int main() {
+    int main() {
 
     int N;
     cout << "Enter the value of N: ";
     cin >> N;
     solveNQueens(N);
     return 0;
-}
+    }
 #2. Space and Time Efficiency
 
 ## Space Efficiency
