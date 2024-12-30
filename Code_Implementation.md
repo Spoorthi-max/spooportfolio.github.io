@@ -105,14 +105,14 @@ Visited: Farm
 Visited: Warehouse
 Visited: Inspection Center
 Visited: Market
-
+````
 ## 2. Linked List Implementation
 
 ### Description
 - **Dynamic Stages**: Add or remove stages (nodes) as crops progress.
 - **Traversal**: Track the entire journey.
 - **Reverse Lookup**: Audit trails for backward tracking.
-
+````
 class Node:
     def __init__(self, location, timestamp, condition):
         self.location = location
