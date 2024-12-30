@@ -170,7 +170,7 @@ Visited: Market
             prev = current
             current = next_node
         self.head = prev
-````
+
 ## Example Usage
 journey = LinkedList()
 
@@ -192,17 +192,18 @@ journey.display_journey()
 ## Reverse and display the journey
 journey.reverse_journey()
 journey.display_journey()
-
+````
 ## Output
 
 ###  Display Journey
-```plaintext
+```
+plaintext
 Crop Journey:
 Location: Farm, Time: 2024-12-30 08:00, Condition: Fresh
 Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
 Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
 Location: Market, Time: 2024-12-30 18:00, Condition: Delivered
-
+````
 ## Tree Algorithm Implementation
 
 ### Key Features
