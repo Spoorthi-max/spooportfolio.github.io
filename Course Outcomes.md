@@ -33,3 +33,20 @@
 - Learning different graph algorithms like Dijkstra's for shortest paths or Kruskal's for minimum spanning trees involves understanding graph theory and data structures like adjacency lists or matrices.
 - Translating theoretical concepts into code can be daunting.
 - Understanding the use of graph algorithms in navigation systems, social network analysis, or optimizing network traffic requires real-world examples and projects to connect the dots.
+- ## Determining the Most Efficient Approach/Design Techniques When Solving a Complex Problem
+
+### 1. Analyze the Problem
+- Clearly define the problem and break it down into smaller components. Understanding the problem scope and constraints is crucial.
+
+### 2. Identify Known Solutions
+- Look for existing algorithms or techniques that address similar problems. This helps in understanding potential approaches.
+
+### 3. Compare Complexity
+- Evaluate different algorithms based on their time and space complexity. Consider practical aspects like ease of implementation and robustness.
+
+### 4. Prototype and Test
+- Implement a simple prototype of the chosen solution and test it with different inputs to see its performance in action.
+
+### 5. Iterate and Optimize
+- Based on the test results, refine and optimize the solution. Seek feedback from peers or mentors to gain insights into potential improvements.
+
