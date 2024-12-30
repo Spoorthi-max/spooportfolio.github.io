@@ -27,4 +27,5 @@
 ![img](https://i0.wp.com/learnersbucket.com/wp-content/uploads/2019/09/ezgif.com-optimize-2.gif?fit=600%2C338&ssl=1)
 - Similar to queues but with prioritization, useful for managing urgent deliveries or high-priority crops.
 ### 8. Linked lists
+![img](https://miro.medium.com/v2/resize:fit:1400/0*kjVAEK1RNIrxfN1-.gif)
 -Linked Lists
