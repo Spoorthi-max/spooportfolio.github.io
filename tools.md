@@ -28,4 +28,5 @@
 - Similar to queues but with prioritization, useful for managing urgent deliveries or high-priority crops.
 ### 8. Linked lists
 ![img](https://miro.medium.com/v2/resize:fit:1400/0*kjVAEK1RNIrxfN1-.gif)
--Linked Lists
+-Linked Lists are used for
+
