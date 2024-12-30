@@ -44,5 +44,6 @@
 ### [Course_Reflections](./Reflections.md)
 ### [Bussiness Cases](./Bussiness_cases.md)
 ### [Course outcomes](./Course_Outcomes.md)
-### [Algorithms](./tools.md)
+### [Algorithms](./tools.md
+### [Course Implementation](./Code_Implementation.md)
 
