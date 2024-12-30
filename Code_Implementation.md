@@ -171,25 +171,25 @@ class LinkedList:
             current = next_node
         self.head = prev
 
-# Example Usage
+## Example Usage
 journey = LinkedList()
 
-# Add stages
+## Add stages
 journey.add_stage("Farm", "2024-12-30 08:00", "Fresh")
 journey.add_stage("Warehouse", "2024-12-30 12:00", "Good")
 journey.add_stage("Inspection Center", "2024-12-30 14:00", "Checked")
 journey.add_stage("Market", "2024-12-30 18:00", "Delivered")
 
-# Display the journey
+## Display the journey
 journey.display_journey()
 
-# Remove a stage
+## Remove a stage
 journey.remove_stage("Inspection Center")
 
-# Display the journey after removal
+## Display the journey after removal
 journey.display_journey()
 
-# Reverse and display the journey
+## Reverse and display the journey
 journey.reverse_journey()
 journey.display_journey()
 
@@ -202,6 +202,132 @@ Location: Farm, Time: 2024-12-30 08:00, Condition: Fresh
 Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
 Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
 Location: Market, Time: 2024-12-30 18:00, Condition: Delivered
+
+## Tree Algorithm Implementation
+
+### Key Features
+
+#### Hierarchical Representation
+- Parent nodes represent sources (e.g., farms).
+- Child nodes represent destinations (e.g., warehouses, markets).
+
+#### Traversal
+- **Depth-First Search (DFS)** for complete path exploration.
+- **Breadth-First Search (BFS)** for level-by-level tracking.
+
+#### Dynamic Updates
+- Add or remove locations (nodes) dynamically.
+class TreeNode:
+    def __init__(self, location, timestamp, condition):
+        self.location = location
+        self.timestamp = timestamp
+        self.condition = condition
+        self.children = []
+
+    def add_child(self, child_node):
+        self.children.append(child_node)
+
+    def remove_child(self, location):
+        self.children = [child for child in self.children if child.location != location]
+
+class CropTree:
+    def __init__(self, root):
+        self.root = root
+
+    def dfs(self, node, path=[]):
+        """Depth-First Search Traversal."""
+        if not node:
+            return
+        path.append((node.location, node.timestamp, node.condition))
+        for child in node.children:
+            self.dfs(child, path)
+        return path
+
+    def bfs(self):
+        """Breadth-First Search Traversal."""
+        queue = [self.root]
+        path = []
+        while queue:
+            current = queue.pop(0)
+            path.append((current.location, current.timestamp, current.condition))
+            queue.extend(current.children)
+        return path
+
+# Example Usage
+# Create the root node
+farm = TreeNode("Farm", "2024-12-30 08:00", "Fresh")
+
+# Create the tree
+crop_tree = CropTree(farm)
+
+# Add child nodes
+warehouse = TreeNode("Warehouse", "2024-12-30 12:00", "Good")
+inspection_center = TreeNode("Inspection Center", "2024-12-30 14:00", "Checked")
+market1 = TreeNode("Market A", "2024-12-30 18:00", "Delivered")
+market2 = TreeNode("Market B", "2024-12-30 20:00", "Delivered")
+
+# Build the tree structure
+farm.add_child(warehouse)
+warehouse.add_child(inspection_center)
+inspection_center.add_child(market1)
+inspection_center.add_child(market2)
+
+# Perform DFS traversal
+print("DFS Traversal:")
+dfs_path = crop_tree.dfs(crop_tree.root)
+for location, timestamp, condition in dfs_path:
+    print(f"Location: {location}, Time: {timestamp}, Condition: {condition}")
+
+# Perform BFS traversal
+print("\nBFS Traversal:")
+bfs_path = crop_tree.bfs()
+for location, timestamp, condition in bfs_path:
+    print(f"Location: {location}, Time: {timestamp}, Condition: {condition}")
+##Output
+## DFS Traversal
+
+```plaintext
+Location: Farm, Time: 2024-12-30 08:00, Condition: Fresh
+Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
+Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
+Location: Market A, Time: 2024-12-30 18:00, Condition: Delivered
+Location: Market B, Time: 2024-12-30 20:00, Condition: Delivered
+## BFS Traversal
+
+```plaintext
+Location: Farm, Time: 2024-12-30 08:00, Condition: Fresh
+Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
+Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
+Location: Market A, Time: 2024-12-30 18:00, Condition: Delivered
+Location: Market B, Time: 2024-12-30 20:00, Condition: Delivered
+
+# Sorting Algorithms
+## Bubble Sort
+Sort the movement data by timestamp in ascending order.
+def bubble_sort(crop_data):
+    n = len(crop_data)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if crop_data[j]["timestamp"] > crop_data[j + 1]["timestamp"]:
+                crop_data[j], crop_data[j + 1] = crop_data[j + 1], crop_data[j]
+
+# Example Usage
+crop_data = [
+    {"location": "Market A", "timestamp": "2024-12-30 18:00", "condition": "Delivered"},
+    {"location": "Farm", "timestamp": "2024-12-30 08:00", "condition": "Fresh"},
+    {"location": "Warehouse", "timestamp": "2024-12-30 12:00", "condition": "Good"},
+    {"location": "Inspection Center", "timestamp": "2024-12-30 14:00", "condition": "Checked"},
+]
+
+bubble_sort(crop_data)
+
+## Output for Bubble Sort (by timestamp):
+```plaintext
+{'location': 'Farm', 'timestamp': '2024-12-30 08:00', 'condition': 'Fresh'}
+{'location': 'Warehouse', 'timestamp': '2024-12-30 12:00', 'condition': 'Good'}
+{'location': 'Inspection Center', 'timestamp': '2024-12-30 14:00', 'condition': 'Checked'}
+{'location': 'Market A', 'timestamp': '2024-12-30 18:00', 'condition': 'Delivered'}
+
 
 
 
