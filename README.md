@@ -1,6 +1,4 @@
 
-- [Course_Reflections](./Reflections.md)
- - [Bussiness Cases](./Bussiness_cases.md)
 ## Portfolio
 
 ### Hello, I'm Spoorthi Hiremath 👋
@@ -8,17 +6,17 @@
 "Im dedicated to learning and evolving, embracing every opportunity that comes my way."  Here's a glimpse of my work:
 
 ## 🛠️ Projects
-- **Project 1**: A short description of your project.
-- **Project 2**: A short description of another project.
+- **Project 1**: Design thinking for social innovation-Self evaluation of eye sight
+- **Project 2**: Engineering exploration-Medi assist bot
 
 ## 🚀 Skills
-- C++, Python, JavaScript
+- C++, C, HTML
 - Data Structures and Algorithms
-- Web Development (React.js, Node.js)
+-Problem startegies and solving
 
 ## 🌐 Find Me Online
-- [GitHub](https://github.com/your-github-username)
-- [LinkedIn](https://linkedin.com/in/your-linkedin-profile)
+- [GitHub](https://github.com/Spoorthi-max)
+- [LinkedIn](https://www.linkedin.com/in/spoorthi-hiremath-2588342a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ## Portfolio Topic
 
@@ -42,3 +40,6 @@
 <br> 
 >" Any sufficiently advanced technology is equivalent to magic". - Arthur C. Clarke (Author)
 >
+
+- [Course_Reflections](./Reflections.md)
+- [Bussiness Cases](./Bussiness_cases.md)
