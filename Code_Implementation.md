@@ -134,64 +134,64 @@ class Node:
             self.tail.next = new_node
             self.tail = new_node
 
-    def display_journey(self):
-        """Display the entire journey."""
-        current = self.head
-        print("Crop Journey:")
-        while current:
-            print(f"Location: {current.location}, Time: {current.timestamp}, Condition: {current.condition}")
-            current = current.next
+        def display_journey(self):
+          """Display the entire journey."""
+           current = self.head
+           print("Crop Journey:")
+            while current:
+             print(f"Location: {current.location}, Time: {current.timestamp}, Condition: {current.condition}")
+              current = current.next
+  
+         def remove_stage(self, location):
+          """Remove a specific stage from the journey."""
+          current = self.head
+           prev = None
+           while current:
+             if current.location == location:
+                 if prev:
+                     prev.next = current.next
+                 else:
+                     self.head = current.next
+                 if current == self.tail:
+                     self.tail = prev
+                  print(f"Removed stage: {location}")
+                  return
+              prev = current
+             current = current.next
+             print(f"Stage not found: {location}")
+ 
+        def reverse_journey(self):
+          """Reverse the linked list to show the journey in reverse order."""
+         prev = None
+          current = self.head
+           while current:
+              next_node = current.next
+              current.next = prev
+              prev = current
+              current = next_node
+            self.head = prev
 
-    def remove_stage(self, location):
-        """Remove a specific stage from the journey."""
-        current = self.head
-        prev = None
-        while current:
-            if current.location == location:
-                if prev:
-                    prev.next = current.next
-                else:
-                    self.head = current.next
-                if current == self.tail:
-                    self.tail = prev
-                print(f"Removed stage: {location}")
-                return
-            prev = current
-            current = current.next
-        print(f"Stage not found: {location}")
+          ## Example Usage
+         journey = LinkedList()
+ 
+        ## Add stages
+       journey.add_stage("Farm", "2024-12-30 08:00", "Fresh")
+       journey.add_stage("Warehouse", "2024-12-30 12:00", "Good")
+        journey.add_stage("Inspection Center", "2024-12-30 14:00", "Checked")
+         journey.add_stage("Market", "2024-12-30 18:00", "Delivered")
 
-    def reverse_journey(self):
-        """Reverse the linked list to show the journey in reverse order."""
-        prev = None
-        current = self.head
-        while current:
-            next_node = current.next
-            current.next = prev
-            prev = current
-            current = next_node
-          self.head = prev
+        ## Display the journey
+       journey.display_journey()
 
-   ## Example Usage
-  journey = LinkedList()
-
-   ## Add stages
-  journey.add_stage("Farm", "2024-12-30 08:00", "Fresh")
-  journey.add_stage("Warehouse", "2024-12-30 12:00", "Good")
-  journey.add_stage("Inspection Center", "2024-12-30 14:00", "Checked")
-   journey.add_stage("Market", "2024-12-30 18:00", "Delivered")
-
-   ## Display the journey
-   journey.display_journey()
-
-    ## Remove a stage
-   journey.remove_stage("Inspection Center")
-
-    ## Display the journey after removal
-   journey.display_journey()
-
-   ## Reverse and display the journey
-   journey.reverse_journey()
-   journey.display_journey()
+        ## Remove a stage
+       journey.remove_stage("Inspection Center")
+ 
+       ## Display the journey after removal
+       journey.display_journey()
+ 
+        ## Reverse and display the journey
+        journey.reverse_journey()
+        journey.display_journey()
 ````
 ## Output
 
