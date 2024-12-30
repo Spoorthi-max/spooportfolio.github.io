@@ -218,7 +218,8 @@ Location: Market, Time: 2024-12-30 18:00, Condition: Delivered
 
 #### Dynamic Updates
 - Add or remove locations (nodes) dynamically.
-class TreeNode:
+  ````
+  class TreeNode:
     def __init__(self, location, timestamp, condition):
         self.location = location
         self.timestamp = timestamp
@@ -231,7 +232,7 @@ class TreeNode:
     def remove_child(self, location):
         self.children = [child for child in self.children if child.location != location]
 
-class CropTree:
+  class CropTree:
     def __init__(self, root):
         self.root = root
 
@@ -254,36 +255,37 @@ class CropTree:
             queue.extend(current.children)
         return path
 
-# Example Usage
-# Create the root node
-farm = TreeNode("Farm", "2024-12-30 08:00", "Fresh")
+   # Example Usage
+   # Create the root node
+   farm = TreeNode("Farm", "2024-12-30 08:00", "Fresh")
 
-# Create the tree
-crop_tree = CropTree(farm)
+   # Create the tree
+   crop_tree = CropTree(farm)
 
-# Add child nodes
-warehouse = TreeNode("Warehouse", "2024-12-30 12:00", "Good")
-inspection_center = TreeNode("Inspection Center", "2024-12-30 14:00", "Checked")
-market1 = TreeNode("Market A", "2024-12-30 18:00", "Delivered")
-market2 = TreeNode("Market B", "2024-12-30 20:00", "Delivered")
+   # Add child nodes
+   warehouse = TreeNode("Warehouse", "2024-12-30 12:00", "Good")
+   inspection_center = TreeNode("Inspection Center", "2024-12-30 14:00", "Checked")
+   market1 = TreeNode("Market A", "2024-12-30 18:00", "Delivered")
+   market2 = TreeNode("Market B", "2024-12-30 20:00", "Delivered")
 
-# Build the tree structure
-farm.add_child(warehouse)
-warehouse.add_child(inspection_center)
-inspection_center.add_child(market1)
-inspection_center.add_child(market2)
+  # Build the tree structure
+   farm.add_child(warehouse)
+   warehouse.add_child(inspection_center)
+   inspection_center.add_child(market1)
+   inspection_center.add_child(market2)
 
-# Perform DFS traversal
-print("DFS Traversal:")
-dfs_path = crop_tree.dfs(crop_tree.root)
-for location, timestamp, condition in dfs_path:
+   # Perform DFS traversal
+   print("DFS Traversal:")
+  dfs_path = crop_tree.dfs(crop_tree.root)
+   for location, timestamp, condition in dfs_path:
     print(f"Location: {location}, Time: {timestamp}, Condition: {condition}")
 
-# Perform BFS traversal
-print("\nBFS Traversal:")
-bfs_path = crop_tree.bfs()
-for location, timestamp, condition in bfs_path:
+   # Perform BFS traversal
+   print("\nBFS Traversal:")
+   bfs_path = crop_tree.bfs()
+   for location, timestamp, condition in bfs_path:
     print(f"Location: {location}, Time: {timestamp}, Condition: {condition}")
+  ````
 ##Output
 ## DFS Traversal
 
@@ -293,6 +295,7 @@ Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
 Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
 Location: Market A, Time: 2024-12-30 18:00, Condition: Delivered
 Location: Market B, Time: 2024-12-30 20:00, Condition: Delivered
+````
 ## BFS Traversal
 
 ```plaintext
@@ -301,10 +304,12 @@ Location: Warehouse, Time: 2024-12-30 12:00, Condition: Good
 Location: Inspection Center, Time: 2024-12-30 14:00, Condition: Checked
 Location: Market A, Time: 2024-12-30 18:00, Condition: Delivered
 Location: Market B, Time: 2024-12-30 20:00, Condition: Delivered
+````
 
 # Sorting Algorithms
 ## Bubble Sort
 Sort the movement data by timestamp in ascending order.
+```
 def bubble_sort(crop_data):
     n = len(crop_data)
     for i in range(n):
@@ -321,7 +326,7 @@ crop_data = [
 ]
 
 bubble_sort(crop_data)
-
+````
 ## Output for Bubble Sort (by timestamp):
 ```plaintext
 {'location': 'Farm', 'timestamp': '2024-12-30 08:00', 'condition': 'Fresh'}
@@ -329,7 +334,7 @@ bubble_sort(crop_data)
 {'location': 'Inspection Center', 'timestamp': '2024-12-30 14:00', 'condition': 'Checked'}
 {'location': 'Market A', 'timestamp': '2024-12-30 18:00', 'condition': 'Delivered'}
 
-
+````
 
 
 
