@@ -113,19 +113,19 @@ Visited: Market
 - **Traversal**: Track the entire journey.
 - **Reverse Lookup**: Audit trails for backward tracking.
 ````
-class Node:
-    def __init__(self, location, timestamp, condition):
+    class Node:
+       def __init__(self, location, timestamp, condition):
         self.location = location
         self.timestamp = timestamp
         self.condition = condition
         self.next = None
 
-class LinkedList:
-    def __init__(self):
+     class LinkedList:
+        def __init__(self):
         self.head = None
         self.tail = None
 
-    def add_stage(self, location, timestamp, condition):
+       def add_stage(self, location, timestamp, condition):
         """Add a new stage to the linked list."""
         new_node = Node(location, timestamp, condition)
         if not self.head:
@@ -170,7 +170,7 @@ class LinkedList:
             prev = current
             current = next_node
         self.head = prev
-
+````
 ## Example Usage
 journey = LinkedList()
 
