@@ -43,6 +43,5 @@
 
 - [Course_Reflections](./Reflections.md)
 - [Bussiness Cases](./Bussiness_cases.md)
-- [course outcomes](./CourseOutcomes.md)
+- [course outcomes](./Course_Outcomes.md)
 
-- 
