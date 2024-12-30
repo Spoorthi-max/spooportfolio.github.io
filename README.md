@@ -1,7 +1,7 @@
 
-## Portfolio
+# Portfolio
 
-### Hello, I'm Spoorthi Hiremath 👋
+## Hello, I'm Spoorthi Hiremath 👋
 
 "Im dedicated to learning and evolving, embracing every opportunity that comes my way."  Here's a glimpse of my work:
 
@@ -41,8 +41,8 @@
 >" Any sufficiently advanced technology is equivalent to magic". - Arthur C. Clarke (Author)
 >
 
-- [Course_Reflections](./Reflections.md)
-- [Bussiness Cases](./Bussiness_cases.md)
-- [course outcomes](./Course_Outcomes.md)
-- [Algorithms](./tools.md)
+### [Course_Reflections](./Reflections.md)
+### [Bussiness Cases](./Bussiness_cases.md)
+### [Course outcomes](./Course_Outcomes.md)
+### [Algorithms](./tools.md)
 
