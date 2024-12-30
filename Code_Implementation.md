@@ -113,7 +113,7 @@ Visited: Market
 - **Traversal**: Track the entire journey.
 - **Reverse Lookup**: Audit trails for backward tracking.
 ````
-    class Node:
+class Node:
        def __init__(self, location, timestamp, condition):
         self.location = location
         self.timestamp = timestamp
@@ -169,29 +169,29 @@ Visited: Market
             current.next = prev
             prev = current
             current = next_node
-        self.head = prev
+          self.head = prev
 
-## Example Usage
-journey = LinkedList()
+   ## Example Usage
+  journey = LinkedList()
 
-## Add stages
-journey.add_stage("Farm", "2024-12-30 08:00", "Fresh")
-journey.add_stage("Warehouse", "2024-12-30 12:00", "Good")
-journey.add_stage("Inspection Center", "2024-12-30 14:00", "Checked")
-journey.add_stage("Market", "2024-12-30 18:00", "Delivered")
+   ## Add stages
+  journey.add_stage("Farm", "2024-12-30 08:00", "Fresh")
+  journey.add_stage("Warehouse", "2024-12-30 12:00", "Good")
+  journey.add_stage("Inspection Center", "2024-12-30 14:00", "Checked")
+   journey.add_stage("Market", "2024-12-30 18:00", "Delivered")
 
-## Display the journey
-journey.display_journey()
+   ## Display the journey
+   journey.display_journey()
 
-## Remove a stage
-journey.remove_stage("Inspection Center")
+    ## Remove a stage
+   journey.remove_stage("Inspection Center")
 
-## Display the journey after removal
-journey.display_journey()
+    ## Display the journey after removal
+   journey.display_journey()
 
-## Reverse and display the journey
-journey.reverse_journey()
-journey.display_journey()
+   ## Reverse and display the journey
+   journey.reverse_journey()
+   journey.display_journey()
 ````
 ## Output
 
