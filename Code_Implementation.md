@@ -286,7 +286,7 @@ Location: Market, Time: 2024-12-30 18:00, Condition: Delivered
    for location, timestamp, condition in bfs_path:
     print(f"Location: {location}, Time: {timestamp}, Condition: {condition}")
   ````
-##Output
+## Output
 ## DFS Traversal
 
 ```plaintext
