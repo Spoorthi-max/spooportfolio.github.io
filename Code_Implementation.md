@@ -358,6 +358,23 @@ bubble_sort(crop_data)
     Current queue:
     1. {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
 
+## Output:
+    Added to queue: {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+    Added to queue: {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+    Added to queue: {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+
+    Current queue:
+     1. {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+    2. {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+    3. {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+
+    Processed crop: {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+     Processed crop: {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+
+    Current queue:
+    1. {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+
+
 
 
 
