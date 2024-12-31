@@ -6,8 +6,8 @@
 "Im dedicated to learning and evolving, embracing every opportunity that comes my way."  Here's a glimpse of my work:
 
 ## 🛠️ Projects
-- **Project 1**: Design thinking for social innovation-Self evaluation of eye sight
-- **Project 2**: Engineering exploration-Medi assist bot
+- **Project 1**: Design thinking for social innovation-Self Evaluation Of Eye Sight
+- **Project 2**: Engineering exploration-Medi Assist Bot
 
 ## 🚀 Skills
 - C++, C, HTML
@@ -24,7 +24,7 @@
 <dt>Course Name</dt>
 <dd>Algorithmic Problem Solving</dd>
 <dt>Course Code</dt>
-<dd>Course Code Placeholder</dd>
+<dd>24ECSC205</dd>
 <dt>Name</dt>
 <dd>Spoorthi Hiremath</dd>
 <dt>SRN</dt>
