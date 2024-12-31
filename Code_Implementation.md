@@ -335,6 +335,29 @@ bubble_sort(crop_data)
 {'location': 'Market A', 'timestamp': '2024-12-30 18:00', 'condition': 'Delivered'}
 
 ````
+## Queue Management
+
+- **manage_shipment_queue Function**: 
+  - Sorts the shipments and adds them to a queue (deque) for processing.
+  - The queue ensures first-in, first-out (FIFO) processing, ideal for handling shipments efficiently.
+
+## Processing Shipments
+
+      - **Main Function**: 
+        - Demonstrates dequeuing shipments and processing them in the correct order.
+       - This approach ensures that crops are tracked and moved systematically from farm to market.
+       Added to queue: {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+     Added to queue: {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+    Added to queue: {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+     Current queue:
+    1. {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+    2. {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+      3. {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+      Processed crop: {'crop_name': 'Wheat', 'quantity': 500, 'farm_location': 'Farm A', 'destination': 'Market X'}
+      Processed crop: {'crop_name': 'Corn', 'quantity': 300, 'farm_location': 'Farm B', 'destination': 'Market Y'}
+    Current queue:
+    1. {'crop_name': 'Rice', 'quantity': 800, 'farm_location': 'Farm C', 'destination': 'Market Z'}
+
 
 
 
